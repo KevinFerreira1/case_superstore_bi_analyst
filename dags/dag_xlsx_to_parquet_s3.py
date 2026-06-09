@@ -58,22 +58,24 @@ def xlsx_to_parquet_s3():
         bucket = S3_BUCKET
         prefix = S3_PREFIX
 
-        # 1. Read the Excel sheet 
+        # 1. Read the Excel sheet
         df = pd.read_excel(XLSX_PATH, sheet_name=sheet_name, engine="openpyxl")
 
-        # 1b. Raw layer: keep all data as-is (strings) 
+        # 1b. Raw layer: keep all data as-is (strings)
         df = df.astype(str)
 
-        # 2. Write local Parquet file 
-        os.makedirs(LOCAL_TMP_DIR, exist_ok=True)
-        local_path = os.path.join(LOCAL_TMP_DIR, parquet_filename)
+        # 2. Write local Parquet file
+        subfolder = sheet_name.lower()  
+        local_dir = os.path.join(LOCAL_TMP_DIR, subfolder)
+        os.makedirs(local_dir, exist_ok=True)
+        local_path = os.path.join(local_dir, parquet_filename)
         df.to_parquet(local_path, engine="pyarrow", index=False)
 
-        # 3. Upload to S3 
-        s3_key = f"{prefix}/{parquet_filename}"
+        # 3. Upload to S3
+        s3_key = f"{prefix}/{subfolder}/{parquet_filename}"
         _upload_to_s3(local_path, s3_key, bucket)
 
-        # 4. Cleanup temp file 
+        # 4. Cleanup temp file
         os.remove(local_path)
 
         return {
