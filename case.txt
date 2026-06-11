@@ -1,0 +1,347 @@
+Aqui está o conteúdo do arquivo estruturado em formato de texto limpo, organizado e legível, sem nenhuma omissão de informação:
+
+---
+
+Case Técnico – Analista de Dados 
+
+Contexto 
+
+A SuperStore é uma empresa varejista que atua em diferentes regiões dos Estados Unidos, comercializando produtos de diversas categorias para consumidores finais e empresas. Atualmente a empresa possui dados de vendas, devoluções de pedidos e estrutura comercial regional, porém não possui uma camada analítica padronizada que permita acompanhar de forma consistente a performance do negócio. A diretoria deseja disponibilizar indicadores confiáveis para análise de vendas, lucratividade, eficiência logística, devoluções e desempenho comercial por região. Para apoiar essa iniciativa, a área de Dados foi acionada para estruturar uma solução analítica que permita transformar os dados brutos em informações prontas para consumo em ferramentas de Business Intelligence. 
+
+Objetivo 
+
+O objetivo deste desafio é avaliar sua capacidade de: 
+
+* Compreender um problema de negócio. 
+
+
+* Explorar e entender diferentes fontes de dados. 
+
+
+* Estruturar e transformar dados utilizando SQL. 
+
+
+* Aplicar conceitos de modelagem analítica. 
+
+
+* Construir um modelo de dados adequado para consumo no Power BI. 
+
+
+* Desenvolver visualizações e indicadores relevantes para o negócio. 
+
+
+* Apresentar conclusões e recomendações baseadas em dados. 
+
+
+
+Fontes de Dados Disponíveis 
+
+Você receberá três conjuntos de dados: 
+
+* 
+**Orders** : Contém informações de pedidos realizados pelos clientes, incluindo: 
+
+
+* Dados do pedido 
+
+
+* Datas de venda e entrega 
+
+
+* Clientes 
+
+
+* Produtos 
+
+
+* Região geográfica 
+
+
+* Quantidade vendida 
+
+
+* Receita 
+
+
+* Descontos 
+
+
+* Lucro 
+
+
+
+
+* 
+**Returns** : Contém os pedidos que foram devolvidos pelos clientes. 
+
+
+* 
+**People** : Contém os responsáveis comerciais de cada região de vendas. 
+
+
+
+Cenário de Negócio 
+
+A liderança da SuperStore deseja responder perguntas como: 
+
+* Quais regiões apresentam melhor desempenho comercial? 
+
+
+* Quais produtos e categorias são mais rentáveis? 
+
+
+* Qual o impacto financeiro das devoluções? 
+
+
+* Como está a eficiência do processo de entrega? 
+
+
+* Existem oportunidades para aumentar a lucratividade? 
+
+
+* Existem regiões ou categorias com desempenho abaixo do esperado? 
+
+
+
+Para responder essas perguntas, será necessário construir uma camada analítica organizada e um dashboard executivo que permita acompanhar os principais indicadores do negócio, que será explicado melhor na ETAPA 3. 
+
+---
+
+Desafio Técnico 
+
+A partir das bases disponibilizadas, desenvolva uma solução analítica capaz de transformar os dados brutos em informações estruturadas para análise e tomada de decisão. 
+
+Etapa 1 – Entendimento dos Dados 
+
+Realize uma análise exploratória das bases fornecidas. Documente: 
+
+* Principais entidades identificadas. 
+
+
+* Relacionamentos entre os dados. 
+
+
+* Problemas de qualidade encontrados. 
+
+
+* Premissas adotadas durante o desenvolvimento. 
+
+
+* Oportunidades de melhoria identificadas. 
+
+
+
+Etapa 2 – Modelagem e ETL 
+
+Espera-se que o candidato organize os dados em um modelo analítico adequado para consumo em BI (ex.: modelo dimensional/star schema ou outra abordagem que julgar adequada). Aplicando boas práticas de: 
+
+* SQL. 
+
+
+* Organização de código. 
+
+
+* Padronização de nomenclaturas. 
+
+
+* Tratamento de dados nulos, duplicados ou qualquer outro tratamento identificado como necessário. 
+
+
+* Criação de regras de negócio. 
+
+
+* Estruturação de um modelo analítico adequado para BI. 
+
+
+
+O candidato poderá utilizar a tecnologia de sua preferência (AWS, Azure, Google Cloud ou ambiente local). 
+
+> 
+> **Importante:** * As principais transformações dos dados deverão ser implementadas utilizando SQL e disponibilizadas nos scripts entregues. * O Power Query poderá ser utilizado como complemento, porém não deverá concentrar toda a lógica de transformação dos dados. * As bases fornecidas podem conter inconsistências, problemas de qualidade limitações ou situações que exijam tratamento dos dados. * Faz parte do desafio identificar, documentar as decisões e premissas adotadas para construção da solução e propor soluções para esses problemas. 
+> 
+> 
+
+Etapa 3 – Dashboard Power BI 
+
+Desenvolva um dashboard executivo contendo indicadores e análises relevantes para o negócio. Não é necessário conectar o Power BI diretamente ao ambiente utilizado na modelagem. Após a preparação dos dados, o candidato poderá exportar os dados tratados para arquivos CSV ou Excel e utilizá-los como fonte de dados do Power BI. 
+
+O dashboard deverá permitir responder, no mínimo, às seguintes perguntas: 
+
+* 
+**Vendas** 
+
+
+* Qual o faturamento total? 
+
+
+* Como as vendas/pedidos evoluíram ao longo do tempo? 
+
+
+* Quais regiões apresentam melhor desempenho? 
+
+
+* Quais segmentos de clientes geram maior receita? 
+
+
+
+
+* 
+**Rentabilidade** 
+
+
+* Quais categorias possuem maior lucro? 
+
+
+* Quais produtos apresentam prejuízo? 
+
+
+* Qual a margem de lucro por categoria? 
+
+
+
+
+* 
+**Clientes** 
+
+
+* Quais clientes geram maior receita? 
+
+
+* Quais clientes geram maior lucro? 
+
+
+* Existe concentração de receita em poucos clientes? 
+
+
+
+
+* 
+**Logística** 
+
+
+* Qual o prazo médio entre pedido e entrega? 
+
+
+* Qual modalidade de envio apresenta melhor desempenho? 
+
+
+* Existem regiões com atrasos recorrentes? 
+
+
+
+
+* 
+**Devoluções** 
+
+
+* Qual o percentual de pedidos devolvidos? 
+
+
+* Qual o impacto financeiro das devoluções? 
+
+
+* Quais categorias apresentam maior índice de devolução? 
+
+
+
+
+
+O candidato poderá criar métricas, indicadores e análises adicionais que julgar relevantes. 
+
+Etapa 4 – Insights e Recomendações 
+
+Apresente pelo menos 3 insights relevantes encontrados durante a análise. Para cada insight: 
+
+* Explique o problema ou oportunidade identificada. 
+
+
+* Demonstre a evidência nos dados. 
+
+
+* Apresente uma recomendação ou ação de negócio. 
+
+
+
+> 
+> **Importante:** Não serão avaliados apenas os dashboards, mas também sua capacidade de interpretar os dados e transformar análises em recomendações para o negócio. 
+> 
+> 
+
+---
+
+Entregáveis 
+
+* Scripts SQL utilizados. 
+
+
+* Modelo de dados. 
+
+
+* Dashboard Power BI (.pbix). 
+
+
+* Repositório Git contendo o código desenvolvido (GitHub, GitLab ou similar). 
+
+
+* Documento resumindo: 
+
+
+* Arquitetura proposta. 
+
+
+* Decisões tomadas. 
+
+
+* Premissas adotadas. 
+
+
+* Principais transformações realizadas. 
+
+
+* Insights encontrados. 
+
+
+
+
+
+Critérios de Avaliação 
+
+| Critério | Peso |
+| --- | --- |
+| SQL e ETL | 35% |
+| Modelagem de Dados | 25% |
+| Power BI | 20% |
+| Capacidade Analítica | 10% |
+| Organização e Documentação | 10%
+
+ |
+
+Diferenciais 
+
+Serão considerados diferenciais: 
+
+* Uso de Git e boas práticas de versionamento. 
+
+
+* Organização do projeto. 
+
+
+* Modelagem dimensional (Star Schema ou equivalente). 
+
+
+* Uso de DAX. 
+
+
+* Qualidade da documentação. 
+
+
+* Qualidade visual do dashboard. 
+
+
+* Automação ou preocupação com escalabilidade da solução. 
+
+
+
+Tempo Esperado 
+
+Leve o tempo necessário, mas entregue o case dentro do prazo acordado pelo e-mail. Não é esperado um produto perfeito, então fique calmo/a respire e faça seu melhor... 😊 O objetivo deste desafio é compreender sua forma de pensar, estruturar dados, resolver problemas e transformar informações em valor para o negócio.

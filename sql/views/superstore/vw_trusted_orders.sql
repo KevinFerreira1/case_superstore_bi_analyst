@@ -1,7 +1,7 @@
--- =============================================================================
--- Source: superstore_db.raw_orders
--- Description: View with cleaned, enriched and deduplicated data
--- =============================================================================
+/*
+ * Description: 
+ * View with cleaned, enriched and deduplicated data
+ */
 
 CREATE OR REPLACE VIEW superstore_db.vw_trusted_orders AS
 
@@ -41,8 +41,8 @@ WITH base AS (
     NULLIF(NULLIF(TRIM("state/province"), ''), 'nan')   AS state,
     NULLIF(NULLIF(TRIM("postal code"), ''), 'nan')      AS postal_code,
     NULLIF(NULLIF(TRIM("region"), ''), 'nan')           AS region,
-    NULLIF(NULLIF(TRIM(UPPER("category")), ''), 'nan')   AS category,
-    NULLIF(NULLIF(TRIM(UPPER("sub-category")), ''), 'nan') AS sub_category,
+    NULLIF(NULLIF(TRIM(UPPER("category")), ''), 'NAN')   AS category,
+    NULLIF(NULLIF(TRIM(UPPER("sub-category")), ''), 'NAN') AS sub_category,
     NULLIF(NULLIF(TRIM("product name"), ''), 'nan')     AS product_name,
     NULLIF(NULLIF(TRIM("customer name"), ''), 'nan')    AS customer_name,
 
@@ -93,7 +93,7 @@ prep_people AS (
     END AS region_normalized
   FROM superstore_db.raw_people
   WHERE NULLIF(NULLIF(TRIM("region"), ''), 'nan') IS NOT NULL
-  AND regional_manager <> 'Temporary Manager'
+  AND NULLIF(NULLIF(TRIM("regional manager"), ''), 'nan') <> 'Temporary Manager'
 ),
 
 -- ─────────────────────────────────────────────────────────────────────────────
@@ -204,14 +204,14 @@ enriched_category AS (
   SELECT
     e.*,
     COALESCE(
-      NULLIF(e.category, ''),
+      NULLIF(NULLIF(e.category, ''), 'NAN'),
       (SELECT MAX(b2.category) FROM base b2
        WHERE b2.product_id = e.product_id
          AND NULLIF(b2.category, '') IS NOT NULL)
     ) AS category_enriched,
 
     COALESCE(
-      NULLIF(e.sub_category, ''),
+      NULLIF(NULLIF(e.sub_category, ''), 'NAN'),
       (SELECT MAX(b2.sub_category) FROM base b2
        WHERE b2.product_id = e.product_id
          AND NULLIF(b2.sub_category, '') IS NOT NULL)
