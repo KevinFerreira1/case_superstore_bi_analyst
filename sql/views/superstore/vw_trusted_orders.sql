@@ -350,7 +350,10 @@ SELECT
   city,
   state,
   postal_code,
-  region,
+  CASE 
+    WHEN country = 'United States' THEN CONCAT('US-',region)
+    WHEN country = 'Canada' THEN CONCAT('CA-',region)
+    ELSE region END AS region,
   category,
   sub_category,
   product_name,
