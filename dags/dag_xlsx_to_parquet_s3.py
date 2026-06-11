@@ -46,7 +46,7 @@ def _upload_to_s3(local_path: str, s3_key: str, bucket: str) -> None:
     dag_id="xlsx_to_parquet_s3",
     default_args=DEFAULT_ARGS,
     description="Convert SuperStore XLSX tabs to Parquet and upload to S3",
-    schedule=None, 
+    schedule='0 * * * *', 
     start_date=datetime(2026, 6, 8),
     catchup=False,
     tags=["superstore", "ingestion", "s3"],
