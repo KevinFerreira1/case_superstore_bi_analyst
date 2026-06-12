@@ -40,3 +40,25 @@ The project was structured into three main layers using S3:
   - `dim_shipping` (Shipping)
   - And 1 analytical metrics table: `fact_orders` (Orders and Returns Fact Table).
 - **Business Keys:** Logical implementation of keys (Surrogate Keys and Natural Keys) to guarantee and enforce proper referential integrity between tables.
+
+## Business Insights & Recommendations
+
+Based on the dashboard analysis, several key insights were identified:
+
+- **Furniture Profit Margin Analysis:**
+  - **Insight:** The Furniture product category exhibits a significantly lower profit margin compared to other categories.
+  - **Recommendation:** Conduct a deep-dive analysis into the cost structure of the Furniture category, focusing on logistics, supply chain, and production costs. The goal is to identify the root causes of the margin erosion and implement strategies to increase profitability.
+  
+  ![Furniture Profit Margin](./img/furniture_profit_margin.png)
+
+- **Loss-Making Products Breakdown:**
+  - **Insight:** Among the top 10 products with the highest overall losses, 4 belong to the Technology category.
+  - **Recommendation:** Re-evaluate the pricing strategy, supplier contracts, and discount policies for these specific Technology products. Investigate whether they serve as loss leaders or if they should be discontinued or optimized to mitigate further financial impact.
+  
+  ![Loss-Making Products](./img/loss-making.png)
+
+- **Monthly Sales Trends (2020–2023):**
+  - **Insight:** Data from 2020 to 2023 indicates a strong upward trend in sales during the second half of the year, with comparatively weaker performance in the first semester.
+  - **Recommendation:** Intensify marketing efforts, commercial campaigns, and targeted promotions during the first half of the year to stimulate demand, pull results up, and balance revenue distribution throughout the year.
+
+  ![Monthly Sales Trends](./img/montly_trend.png)

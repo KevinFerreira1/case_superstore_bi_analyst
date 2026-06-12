@@ -2,6 +2,14 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+[1.03.1] - 2026-06-11
+
+Added
+- Add dags/dag_orchestrate_superstore.py 
+
+Changed
+- Add concated region name in vr trusted view for region column
+
 [1.02.1] - 2026-06-11
 
 Added
